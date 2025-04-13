@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florian Fröhlich | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+    }
+    aside {
+      width: 250px;
+      background-color: #0066cc;
+      color: white;
+      height: 100vh;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      position: fixed;
+    }
+    aside h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    aside button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      background-color: #005bb5;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: left;
+    }
+    #content-area {
+      margin-left: 250px;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+      padding: 1rem;
+    }
+    .download-link {
+      display: block;
+      margin: 1rem 0;
+    }
+    .gallery-image {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body onload="loadContent('skills')">
+  <aside>
+    <h1>Florian Fröhlich</h1>
+    <p>Softwareentwickler aus Baden</p>
+    <button onclick="loadContent('skills')">Fähigkeiten</button>
+    <button onclick="loadContent('education')">Ausbildung</button>
+    <button onclick="loadContent('experience')">Berufserfahrung</button>
+    <button onclick="loadContent('hardware')">Hardware Projekte</button>
+    <button onclick="loadContent('software')">Software Projekte</button>
+    <button onclick="loadContent('gallery')">Bilder</button>
+    <button onclick="loadContent('contact')">Kontakt</button>
+  </aside>
+
+  <div id="content-area"></div>
+
+  <footer>
+    &copy; 2025 Florian Fröhlich
+  </footer>
+
+  <script>
+    const content = {
+      skills: `
+        <h2>🔧 Fähigkeiten</h2>
+        <h3>🔌 Elektrik</h3>
+        <ul>
+          <li>Werkzeuglehre</li>
+          <li>Montage, Verlegung von Leitungen</li>
+          <li>Verdrahtung</li>
+          <li>Isolation</li>
+        </ul>
+        <h3>⚡️ Elektrotechnik</h3>
+        <ul>
+          <li>Schaltungsanalyse & Analogtechnik</li>
+          <li>Signalübermittlung, -optimierung und -verstärkung</li>
+          <li>Komplexe Widerstände & Frequenzfilter</li>
+          <li>Messtechnik (Oszilloskop, Multimeter)</li>
+          <li>Gleichrichter & Verpolungsschutz</li>
+          <li>Datenkompression (Huffman, LZW12-15)</li>
+          <li>Strahlungsberechnung & EMV-Optimierung</li>
+          <li>Digitaltechnik, Buck & Boost Converter</li>
+          <li>Bipolare und MOSFET-Transistoren</li>
+          <li>Logik-Bausteine, Speicherschaltungen</li>
+          <li>FPGAs & Mikroprozessoren (Arduinos, Genuinos, div. ICs)</li>
+          <li>Bussysteme: I²C, UART, SPI, CAN</li>
+          <li>Energie-, Steuerungs- und Regelungstechnik</li>
+          <li>Grundlagen der Mechanik, Hydraulik und Pneumatik</li>
+        </ul>
+        <h3>🛠️ Simulations- & Design-Programme</h3>
+        <ul>
+          <li>Altium Designer</li>
+          <li>MATLAB, Simulink</li>
+          <li>LTSpice</li>
+        </ul>
+        <h3>🌐 Netzwerktechnik</h3>
+        <ul>
+          <li>Hersteller: Cisco, HP, Microsoft</li>
+          <li>Systeme: Debian-basierte Lösungen, Asterisk-Telefonanlagen</li>
+          <li>Virtualisierte Netzwerke: GNS3, VirtualBox</li>
+          <li>Protokolle: IPv4, IPv6 (inkl. Tunneling & IPv4-Translation), ISIS, EIGRP, OSPF, LLDP, CDP, DHCP, DNS, NAT</li>
+          <li>Datensicherheit: ACLs, StickyBits, Verschlüsselung (z. B. scrypt), Mirror-Ports, VLANs, Management Plane</li>
+          <li>Server: Apache, Nginx, Bind9, OpenLDAP, HTTPS, MySQL Server</li>
+        </ul>
+        <h3>💻 Software Engineering</h3>
+        <ul>
+          <li><strong>Sprachen:</strong> Assembler, C, C++, C#, Java, Python, SQL, HTML5, XML, PHP, JavaScript, Bash</li>
+          <li><strong>Entwicklungsumgebungen:</strong> Visual Studio, SSMS, Eclipse, Qt, Unity, PyCharm, Brackets, Notepad++</li>
+          <li><strong>Betriebssysteme:</strong> Windows, Ubuntu, LUbuntu, Kali Linux, Arch Linux, Minux</li>
+          <li><strong>Frameworks & Konzepte:</strong> .NET Framework, Entity Framework 6 & Core, Qt Framework, OOP, MVC, MVVM, Dependency Injection, Factory Method, Command Pattern, API-Design</li>
+          <li><strong>Standards & Tools:</strong> MISRA C, ReSharper, MATLAB, Simulink, NSwag Studios (REST API), Makefiles, Data Annotation Extensions, Precompiled Debian Utilities, HEX-Generatoren</li>
+        </ul>
+        <h3>🌍 Weitere Kompetenzen</h3>
+        <ul>
+          <li><strong>Sprachen:</strong> Englisch (C1, Cambridge Advanced), Spanisch (B2), Französisch (B1), Kleines Latinum</li>
+          <li><strong>Schulungen & Zertifikate:</strong> Maschinschreiben (2006), Linux, Bash & Bildverarbeitung (2009), Gedächtnistraining (2010), Python Programming (2011), Software-Pädagogik (2011)</li>
+                    <li><strong>Führerschein:</strong> A, B</li>
+        </ul>
+      `,
+      education: `
+        <h2>🎓 Ausbildung</h2>
+        <ul>
+          <li>2021–2023: Coursera Online-Kurse
+            <ul>
+              <li><strong>Data Science Math Skills (Duke University):</strong> Mathematische Grundlagen der Datenwissenschaft.<br>
+                <a href="/mnt/data/Coursera 7S58L3N1U0DW.pdf" download>📄 Zertifikat herunterladen</a>
+              </li>
+              <li><strong>Exploratory Data Analysis for Machine Learning (IBM):</strong> Datenanalyse für ML.<br>
+                <a href="/mnt/data/Coursera 9IM7DIB6GCXM.pdf" download>📄 Zertifikat herunterladen</a>
+              </li>
+              <li><strong>Matrix Algebra for Engineers (HKUST):</strong> Lineare Algebra.<br>
+                <a href="/mnt/data/Coursera MWBJ938GEISX.pdf" download>📄 Zertifikat herunterladen</a>
+              </li>
+            </ul>
+          </li>
+          <li>2015–2018: TGM Wien, Kolleg für Elektronik- und Netzwerktechnik<br>
+            <a href="/mnt/data/TGM Zeugnisse.pdf" download class="download-link">📄 Zeugnisse herunterladen</a>
+          <li><strong>2004-2012: </strong> Kurse</li>
+            <ul>
+              <li><strong>Maschinschreiben:</strong> Schnelles Schreiben am Computer </li>
+              <li><strong>Python Crash Kurs bei BuPP:</strong> Grundlagen der Programmierung in Python.</li>             
+              <li><strong>Kurs Software Pädagogik bei BuPP:</strong> Was spricht Kinder Software seitig besonders an und was sollte gefördert werden</li>
+            </ul>
+          </li>
+          <li>2004–2012: BG & BRG Baden (AHS mit Matura)<br>
+            <a href="/mnt/data/BG Frauengasse Maturazeugnis.pdf" download class="download-link">📄 Maturazeugnis herunterladen</a>
+          </li>
+        </ul>
+      `,
+      experience: `
+        <h2>💼 Berufserfahrung</h2>
+        <ul>
+          <li>2019: .NET Entwickler bei Binderholz Bausysteme GmbH</li>
+          <li>2017–2018: Embedded Software Entwickler bei LG Electronics Division</li>
+          <li>2014: Telefonist bei Walter Services Austria GmbH</li>
+          <li>2012–2013: Militärdienst in Zwölfaxing</li>
+          <li>2010: Kundenbetreuung bei Billa AG</li>
+          <li>2008–2010: Jugendgutachter für das BMWFJ</li>
+        </ul>
+      `,
+      hardware: `
+        <h2>🔩 Hardware Projekte</h2>
+        <p>Hier kannst du deine Projekte im Bereich Hardware vorstellen – z. B. Schaltungen, Mikrocontroller, Sensorik, etc.</p>
+      `,
+      software: `
+        <h2>💻 Software Projekte</h2>
+        <h1>Zahlenratespiel in Python</h1>
+  <py-script>
+import random
+
+geheime_zahl = random.randint(1, 100)
+versuche = 0
+
+def tipp_abgeben():
+    global versuche
+    eingabe = Element("tipp").element.value
+    try:
+        zahl = int(eingabe)
+        versuche += 1
+        if zahl < geheime_zahl:
+            Element("ausgabe").write("Zu niedrig!")
+        elif zahl > geheime_zahl:
+            Element("ausgabe").write("Zu hoch!")
+        else:
+            Element("ausgabe").write(f"Richtig! Die Zahl war {geheime_zahl}. Du hast {versuche} Versuche gebraucht.")
+    except:
+        Element("ausgabe").write("Bitte gib eine gültige Zahl ein.")
+  </py-script>
+
+  <input id="tipp" type="text" placeholder="Dein Tipp">
+  <button py-click="tipp_abgeben()">Tipp abgeben</button>
+  <p id="ausgabe"></p>
+      `,
+      gallery: `
+        <h2>🖼️ Bilder</h2>
+        <p>Ein Blick hinter die Kulissen – Gitarre & Leidenschaft für Musik:</p>
+        <img src="IMG_0089.jpg" alt="Florian mit Gitarre" class="gallery-image">
+      `,
+      contact: `
+        <h2>📧 Kontakt</h2>
+        <p>Du kannst mich jederzeit unter <a href="mailto:kontakt@florianfroehlich.at">kontakt@florianfroehlich.at</a> erreichen.</p>
+        <p>Adresse: Heinrich Strecker - Gasse 8, 2500 Baden</p>
+        <p>Telefon: <a href="tel:+4366475537775">+43 664 755 37775</a></p>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit">Absenden</button>
+        </form>
+      `
+    };
+
+    function loadContent(section) {
+      const area = document.getElementById("content-area");
+      area.innerHTML = content[section] || "<p>Inhalt nicht gefunden.</p>";
+      area.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
